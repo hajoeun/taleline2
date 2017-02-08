@@ -1,15 +1,9 @@
 var express = require('express');
 var app = express();
-
+var credentials = require('../private/credentials');
 var knex = require('knex')({
   client: 'pg',
-  connection: {
-    host: 'taleline2instance.csumlqvz04bi.ap-northeast-2.rds.amazonaws.com',
-    user: 'joeunha',
-    password: 'jk3140728',
-    database: 'Taleline2DB',
-    charset: 'utf8'
-  },
+  connection: credentials.pg_connection,
   debug: false
 });
 
