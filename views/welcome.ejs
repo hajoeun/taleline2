@@ -2,7 +2,8 @@
 
 <div>
   <h2>로그인 하기</h2>
-  <form action="/apis/signin" method="POST">
+
+  <form action="/apis/signin" method="post">
     <label for="email">이메일</label>
     <input type="email" name="email">
     <label for="password">비밀번호</label>
@@ -13,7 +14,10 @@
 
 <div>
   <h2>회원가입 하기</h2>
-  <form action="/apis/signup" method="POST">
+  <% if (message && message.type) { %>
+  <p><%= message.text %></p>
+  <% } %>
+  <form action="/apis/signup" method="post">
     <label for="name">이름</label>
     <input type="text" name="name" required>
     <label for="email">이메일</label>

@@ -7,39 +7,47 @@ var knex = require('knex')({
   debug: false
 });
 
-app.post('/', function(req, res, next) {
+app.post('/', function(req, res) {
   res.send("----------------");
 });
 
-app.post('/signin', function(req, res, next) {
+app.post('/signin', function(req, res) {
   knex('users').where({
     email: req.body.email,
     password: req.body.password
   }).then(function(user) {
-    if (!user.length) console.log("로그인 실패");
-    res.redirect('/');
+    user = _.omit(_.first(user), 'password');
+    if (user.id) {
+      req.session.user = user;
+    }
+    res.redirect(303, '/');
   });
 });
 
-app.post('/signup', function(req, res, next) {
-  if (req.body.password !== req.body.password_confirm) {
-    console.log("비밀번호가 일치하지 않습니다");
-    return res.redirect('/');
+app.post('/signup', function(req, res) {
+  var user = req.body;
+  if (user.password !== user.password_confirm) {
+    req.session.message = {
+      type: 'error',
+      text: '비밀번호가 일치하지 않습니다.'
+    };
+    return res.redirect(303, '/');
   }
 
   knex('users').insert({
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password
-  }).then(function(user) {
-    console.log(user);
-    if (user) {
-      res.redirect('/');
-    } else {
-      res.send("회원가입 실패");
-    }
+    name: user.name,
+    email: user.email,
+    password: user.password
+  }).then(function() {
+    req.session.user = user;
+    res.redirect(303, '/');
   });
 });
 
+app.post('/signout', function(req, res) {
+  req.session.user = {};
+  console.log('signout!');
+  res.redirect(303, '/');
+});
 
 module.exports = app;

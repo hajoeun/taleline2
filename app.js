@@ -5,7 +5,9 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var session = require('express-session');
 var bodyParser = require('body-parser');
+var credentials = require('./private/credentials');
 
 var app = express();
 
@@ -18,7 +20,13 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+// app.use(cookieParser(credentials.cookie_secret));
+app.use(session({
+  resave: false,
+  saveUninitialized: false,
+  secret: credentials.cookie_secret,
+  cookie: { secure: false, }
+}));
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
