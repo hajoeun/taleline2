@@ -5,3 +5,101 @@ body {
 a {
   color: #00b7ff;
 }
+.welcome_container {
+  padding: 50px;
+  background-color: #faf2ed;
+  height: 100vh;
+}
+.welcome_container ul,
+.welcome_container li {
+  padding: 0;
+  list-style: none;
+}
+.welcome_container ul input,
+.welcome_container li input {
+  background: #f6f7f9;
+  color: #516a82;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  margin: 0 auto;
+  outline: 0;
+  padding: 10px 30px 10px 30px;
+  width: 80%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+.welcome_container ul button,
+.welcome_container li button {
+  background: #f29da0;
+  color: #fff;
+  margin: 0 auto;
+  padding: 10px 30px 10px 30px;
+  font-size: 18px;
+  width: 80%;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+.welcome_container .welcome_header {
+  text-align: center;
+}
+.welcome_container .welcome_body {
+  display: flex;
+}
+.welcome_container .welcome_body .sign.container,
+.welcome_container .welcome_body .guide.container {
+  flex: 1;
+  background-color: #fff;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 20px;
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 500px;
+  box-shadow: 0px 8px 10px rgba(204,204,204,0.2);
+}
+.welcome_container .welcome_body .sign.container .sign_header,
+.welcome_container .welcome_body .guide.container .sign_header {
+  color: #516a82;
+  margin-top: 30px;
+}
+.welcome_container .welcome_body .sign.container .sign_wrapper .sign_in,
+.welcome_container .welcome_body .guide.container .sign_wrapper .sign_in,
+.welcome_container .welcome_body .sign.container .sign_wrapper .sign_up,
+.welcome_container .welcome_body .guide.container .sign_wrapper .sign_up {
+  text-align: center;
+}
+.welcome_container .welcome_body .sign.container .tab_wrapper,
+.welcome_container .welcome_body .guide.container .tab_wrapper {
+  display: flex;
+}
+.welcome_container .welcome_body .sign.container .tab_wrapper .tab,
+.welcome_container .welcome_body .guide.container .tab_wrapper .tab {
+  flex: 1;
+  height: 70px;
+  text-align: center;
+  color: rgba(81,106,130,0.7);
+}
+.welcome_container .welcome_body .sign.container .tab_wrapper .tab span:first-child,
+.welcome_container .welcome_body .guide.container .tab_wrapper .tab span:first-child {
+  font-size: 15px;
+}
+.welcome_container .welcome_body .sign.container .tab_wrapper .tab span:last-child,
+.welcome_container .welcome_body .guide.container .tab_wrapper .tab span:last-child {
+  font-size: 22px;
+}
+.welcome_container .welcome_body .sign.container .tab_wrapper .tab.sign_in.checked,
+.welcome_container .welcome_body .guide.container .tab_wrapper .tab.sign_in.checked {
+  box-shadow: 20px 10px 30px 0px rgba(204,204,204,0.2);
+  color: #516a82;
+}
+.welcome_container .welcome_body .sign.container .tab_wrapper .tab.sign_up.checked,
+.welcome_container .welcome_body .guide.container .tab_wrapper .tab.sign_up.checked {
+  box-shadow: -20px 10px 30px 0px rgba(204,204,204,0.2);
+  color: #516a82;
+}

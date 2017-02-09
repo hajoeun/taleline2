@@ -3,3 +3,79 @@ body
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
 a
   color: #00B7FF
+
+.welcome_container
+  padding 50px
+  background-color rgb(250, 242, 237)
+  height 100vh
+  ul
+  li
+    padding 0
+    list-style none
+    //border 1px solid green
+    input
+      background rgb(246, 247, 249)
+      color rgb(81, 106, 130)
+      border none
+      border-radius 4px
+      font-size 16px
+      margin 0 auto
+      outline 0
+      padding 10px 30px 10px 30px
+      width 80%
+      -webkit-box-sizing border-box
+      -moz-box-sizing border-box
+      box-sizing border-box
+      margin-bottom 30px
+    button
+      background rgb(242, 157, 160)
+      color white
+      margin 0 auto
+      padding 10px 30px 10px 30px
+      font-size 18px
+      width 80%
+      border none
+      border-radius 4px
+      margin-bottom 30px
+  .welcome_header
+    text-align center
+  .welcome_body
+    display flex
+    .sign.container
+    .guide.container
+      flex 1
+      background-color white;
+      -webkit-border-radius: 30px
+      -moz-border-radius: 30px
+      border-radius: 20px
+      margin 50px
+      display flex
+      flex-direction column
+      justify-content space-between
+      height 500px
+      box-shadow 0px 8px 10px rgba(204,204,204,0.2)
+      .sign_header
+        color rgb(81, 106, 130)
+        margin-top 30px
+      .sign_wrapper
+        .sign_in
+        .sign_up
+          text-align center
+      .tab_wrapper
+        display flex
+        .tab
+          flex 1
+          height 70px
+          text-align center
+          color rgba(81, 106, 130, .7)
+          span:first-child
+            font-size 15px
+          span:last-child
+            font-size 22px
+        .tab.sign_in.checked
+          box-shadow 20px 10px 30px 0px rgba(204,204,204,0.2)
+          color rgba(81, 106, 130, 1)
+        .tab.sign_up.checked
+          box-shadow -20px 10px 30px 0px rgba(204,204,204,0.2)
+          color rgba(81, 106, 130, 1)
+
