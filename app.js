@@ -8,6 +8,7 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var credentials = require('./private/credentials');
+var redisStore = require('connect-redis')(session);
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   secret: credentials.cookie_secret,
+  store: new redisStore({ host: 'localhost', port: 6379 }),
   cookie: { secure: false, }
 }));
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));

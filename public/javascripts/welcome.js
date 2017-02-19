@@ -1,4 +1,5 @@
 $(function() {
+  console.log("Welcome to Welcome Page");
   var $tab_sign_in = $('.tab.sign_in'),
       $tab_sign_up = $('.tab.sign_up'),
       $form_sign_in = $('.sign_wrapper .sign_in'),
