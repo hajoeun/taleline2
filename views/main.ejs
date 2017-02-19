@@ -1,11 +1,28 @@
-<h1>Main Page</h1>
-
-<div>
-  <h2>환영합니다. <%= user.name %>님</h2>
+<div class="main_container">
+  <div class="main_header">
+    <div class="btn ham">
+      <span>menu</span>
+    </div>
+    <div class="logo">
+      <span>logo</span>
+    </div>
+    <div class="thumb">
+      <span>logout</span>
+    </div>
+  </div>
+  <div class="main_body">
+    <div class="post_wrapper">
+      <textarea name="content" id="" cols="45" rows="10" placeholder="오늘의 문장을 적어보세요."></textarea>
+      <div class="btn_wrapper">
+        <button class="submit">추가</button>
+        <!--<button class="refresh">가져오기</button>-->
+      </div>
+    </div>
+    <div class="feed_wrapper">
+      <ul></ul>
+    </div>
+  </div>
+  <div class="main_footer">
+  </div>
 </div>
-
-<div>
-  <form action="/apis/signout" method="post">
-    <button type="submit">로그아웃</button>
-  </form>
-</div>
+<script src="/javascripts/main.js"></script>

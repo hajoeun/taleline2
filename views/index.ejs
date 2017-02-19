@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <!--<script src="https://use.fontawesome.com/53157ff0d7.js"></script>-->
   </head>
   <body>
-    <%- include(body, { message: message }) %>
     <script src="/javascripts/jquery-3.1.1.min.js"></script>
     <script src="/javascripts/partial.js"></script>
-    <script src="/javascripts/action.js"></script>
+    <%- include(body, { message: message }) %>
   </body>
 </html>
